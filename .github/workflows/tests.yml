@@ -24,7 +24,7 @@ jobs:
           "-scheme AppAuthTV -destination 'platform=tvOS Simulator,name=Apple TV,OS=16.1' -sdk 'appletvsimulator16.1'"
         ]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Run unit test targets
       run: |
         xcodebuild test \
@@ -41,7 +41,7 @@ jobs:
           '--use-static-frameworks'
         ]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Update Bundler
       run: bundle update --bundler
     - name: Install Ruby gems with Bundler
@@ -52,7 +52,7 @@ jobs:
   spm-build-test:
     runs-on: macos-11
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Build unit test target
       run: swift build
     - name: Run unit test target
